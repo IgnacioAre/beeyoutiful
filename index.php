@@ -69,7 +69,7 @@
         case '': 
             include_once base_url.'inicio.php';
             break;
-
+            
         default: 
             include_once base_url.'error_404.php'; 
         break;
