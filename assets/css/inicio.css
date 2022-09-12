@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#intro{
+    height: 100vh;
+}
+
+#intro video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#contenedorLetras{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.letras{
+    filter: drop-shadow(2px 2px 5px #333);
+    opacity: 0;
+}
+
+#contenedor_uno{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #333;
+}

@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font family Leomada */
+
+@font-face {
+    font-family: 'Lemonada Semi Bold';
+    src: url('../assets/fonts/Lemonada/Lemonada-SemiBold.ttf') format('woff2');
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Lemonada Normal';
+    src: url('../assets/fonts/Lemonada/Lemonada-Regular.ttf') format('woff2');
+    font-display: auto;
+}
+
+/* Font family Quicksand */
+
+@font-face {
+    font-family: 'Quicksand Semi Bold';
+    src: url('../assets/fonts/Quicksand/Quicksand-SemiBold.ttf') format('woff2');
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Quicksand Normal';
+    src: url('../assets/fonts/Quicksand/Quicksand-Regular.ttf') format('woff2');
+    font-display: auto;
+}
+
+:root{
+    scroll-behavior: smooth;
+    --amarillo:#f2cc03;
+    --gris:#929294;
+    --verde:#76b784;
+}
+
+.menuHeader{
+    background-color: var(--verdeBase);
+}
+
+
+.tituloHeader{
+    font-family: 'Lemonada Semi Bold';
+}
+
+.itemHeader{
+    font-family: 'Lemonada Normal';
+}
+
+
+body h1,h2,h3,h4,h5,h6{
+    font-family: 'Quicksand Semi Bold';
+}
+
+body{
+    font-family: 'Quicksand Normal';
+    overflow-x: hidden;
+}
+
+/* No seleccionable */
+
+.no-seleccionable{
+    -moz-user-select: none; 
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
