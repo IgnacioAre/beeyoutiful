@@ -16,8 +16,32 @@
     </div>
 
     <section id="contenedor_uno">
-        <img id="abeja" src="<?php echo SERVER_URL; ?>assets/img/abeja.png" width="200px" alt="">
+        <div id="img_uno"></div>
+        <div id="contenedor_texto_uno">
+            <span id="t1">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, perferendis.
+            </span>
+            <span id="t2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, magni!
+            </span>
+            <span id="t3">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, perferendis.
+            </span>
+            <span id="t4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, magni!
+            </span>
+        </div>
+        
     </section>
+
+    <section id="contenedor_dos">
+
+        <div class="contentTextosHidden">
+            <span class="texto_dos">Texto de prueba dos</span>
+            <div class="mask"></div>
+        </div>
+    </section>
+    
 
 </main>
 

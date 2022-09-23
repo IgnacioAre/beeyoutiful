@@ -6,7 +6,9 @@
 
 #intro{
     height: 100vh;
+    filter: sepia(0.3);
 }
+
 
 #intro video{
     height: 100%;
@@ -19,15 +21,160 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+    display: flex;
+    gap: 20px;
 }
 
 .letras{
-    filter: drop-shadow(2px 2px 5px #333);
+    filter: drop-shadow(2px 2px 5px #000);
     opacity: 0;
+    height: 100px;
 }
 
+#img_you{
+    filter: drop-shadow(2px 2px 5px #333);
+}
+
+#img_tiful{
+    margin-left: 50px;
+}
+
+
 #contenedor_uno{
-    min-height: 100vh;
+    position: relative;
     width: 100%;
-    background-color: #333;
+    background-image: linear-gradient(to top, #f8dad0 0%, #fffffa 100%);
+    height: 1300px;
+}
+
+#contenedor_img_uno{
+    width: 50%;
+    height: 100%;
+}
+
+#img_uno{
+    position: sticky;
+    opacity: 0;
+    top: 200px;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 500px;
+    height: 500px;
+    background-image: linear-gradient(to bottom,rgba(248, 218, 208,0.4),rgba(255, 255, 255, 0.4)), url("../img/img_muestra_1.jpeg");
+    background-size: cover;
+    border-radius: 20% 50% 20% 50% / 20% 50% 20% 50%;
+    transition: all 1s;
+}
+
+#contenedor_dos{
+    height: 3500px;
+    width: 100%;
+    background-color: #f8dad0;
+}
+
+.showUp{
+    opacity: 1 !important;
+    transform: translateY(-50px);
+}
+
+.shadowFade{
+    box-shadow: inset 0px 0px 15px #dabf5f, inset 0px 0px 25px #dac169,0px 0px 30px #dac169;
+}
+
+#contenedor_texto_uno{
+    width: 47%;
+    float: right;
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+#contenedor_texto_uno span{
+    font-size: 19pt;
+    opacity: 0;
+    transition: all 1s;
+    font-family: 'Annie Use Your Telescope', cursive;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/*
+transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 *\/, 0 /* Estira eje X y vuelve *\/, 0 /* Rotación eje X -> 0.006 *\/, 0 /* Estira eje X en forma de paralelogramo -> 0.2 *\/, 1 /* Estira eje Y -> 2 *\/ , 0 /* Estira eje Y y vuelve *\/, 0 /* Rotación eje Y -> 0.006 *\/, 0, 0, 1 /* 0 invisible, 1 visible *\/, 0, 0, 0 /* desplazamiento Y -> 100 *\/, 0, 1 /* Acercamiento -> 2 *\/);
+*/
+
+.contentTextosHidden{
+    position: sticky;
+    top: 300px;
+    margin: 0 auto;
+    height: 120px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.texto_dos{
+    position: relative;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: #e7c341;
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-weight: bold;
+    font-size: 60pt;
+}
+
+.mask{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 115%;
+    background-color: rgba(248, 218, 208, 0.7);
+}
+
+
+@media screen and (max-width: 780px){
+    .letras{
+        height: 70px;
+    }
+    #img_uno{
+        width: 90%;
+        height: 400px;
+        margin-left: 20px;
+    }
+    #contenedor_texto_uno{
+        width: 100%;
+        padding: 100px 60px;
+        text-shadow: 1px 1px 2px #fff;
+    }
+}
+
+
+@media screen and (max-width: 560px){
+    .letras{
+        height: 50px;
+    }
+
+    #contenedorLetras{
+        gap: 0px;
+    }
+
+    #img_you{
+        height: 30px;
+    }
+
+    #img_tiful{
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .letras{
+        height: 45px;
+    }
 }

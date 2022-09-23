@@ -20,6 +20,8 @@
     <script src="<?php echo SERVER_URL; ?>ScrollMagic/TimelineLite.min.js"></script>
     <script src="<?php echo SERVER_URL; ?>ScrollMagic/CSSPlugin.min.js"></script>
     <script src="<?php echo SERVER_URL; ?>ScrollMagic/BezierPlugin.min.js"></script>
+    <link rel="stylesheet" href="<?php echo SERVER_URL; ?>assets/css/locomotive-scroll.css">
+    <script src="<?php echo SERVER_URL; ?>js/locomotive-scroll.js"></script>
     <script src="<?php echo SERVER_URL; ?>js/index.js"></script>
 </head>
 <body>
@@ -57,6 +59,12 @@
 
     // ################## FIN PARAMETROS ##################
 
+
+    echo '
+    <div id="menu_principal">
+        <div><img src="'.SERVER_URL.'assets/img/balsamo.png" /> <span>BALSAMO LABIAL</span></div>
+        <div><img src="'.SERVER_URL.'assets/img/cera.png" /> <span>CERA CAPILAR</span></div>
+    </div>';
 
 
     //  DEFINICIÓN DE RUTAS
