@@ -1,4 +1,4 @@
 <?php
 
-    const SERVER_URL = 'http://localhost:8003/';
+    const SERVER_URL = 'http://localhost:8002/';
 ?>
