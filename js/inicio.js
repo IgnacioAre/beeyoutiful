@@ -1,5 +1,7 @@
 let menu_principal = $('#menu_principal');
 const panal = $('.panal');
+const clickeable = $('.clickeable');
+let imgLimon = $('.imgLimon');
 const intro =  document.querySelector('#intro');
 const contenedor_uno =  document.querySelector('#contenedor_uno');
 const video = document.querySelector('video');
@@ -14,7 +16,7 @@ const tiful = $('#img_tiful');
 const controller = new ScrollMagic.Controller();
 
 
-panal.click((e)=>{
+clickeable.click((e)=>{
     let element = $(e.target);
     let path = urlCompleta+'assets/img/';
 
@@ -251,8 +253,6 @@ $(document).on("scroll", function(){
     let panal_scale_tres = (-19.5 + (desplazamientoActual / 1000));
     let propiedades_opacity_tres = (-20.5 + (desplazamientoActual / 1000));
 
-    console.log(propiedades_opacity_tres);
-
     let matrix_uno = (-12 + (desplazamientoActual / 1000));
     let matrix_dos = ((-17.8 + (desplazamientoActual / 800)) > 0)?(-17.8 + (desplazamientoActual / 800)):0;
     let matrix_tres = (-11.8 + (desplazamientoActual / 1200));
@@ -312,6 +312,7 @@ $(document).on("scroll", function(){
         contenedorPropiedades.fadeIn('slow');
     }
 
+
     //Cambio de titulo en contenedor tres
 
     if(desplazamientoActual < 23000){
@@ -322,43 +323,264 @@ $(document).on("scroll", function(){
         $('#titulo_contenedor_tres').css('width','0px');
 
         setTimeout(() => {
+            $('#titulo_contenedor_tres').css('font-size','80pt');
             $('#titulo_contenedor_tres').text('PROPIEDADES DE LA MIEL');
         }, 400);
 
-    }
+        if($(window).width() < 1600){
+            $('#formaLimon').css('transform','translate(150%, 900px)');
+        }else{
+            $('#formaLimon').css('transform','translate(200%, 900px)');
+        }
 
-    if(desplazamientoActual > 24000){
-        $('#titulo_contenedor_tres').text('BENEFICIOS DEL LIMÓN');
+    }else if(desplazamientoActual > 24000){
+        $('#titulo_contenedor_tres').text('BENEFICIOS DEL LIMÓN EN EL CABELLO');
         $('#titulo_contenedor_tres').css('width','100%');
+        $('#titulo_contenedor_tres').css('font-size','50pt');
+        if($(window).width() < 1600){
+            $('#formaLimon').css('transform','translate(150%, -100px)');
+        }else{
+            $('#formaLimon').css('transform','translate(200%, -100px)');
+        }
     }
 
-    let panal_scale_cuatro = (-25 + (desplazamientoActual / 1000));
-    let panal_scale_cinco = (-26 + (desplazamientoActual / 1000));
-    let panal_scale_seis = (-27 + (desplazamientoActual / 1000));
+
+    let imgLimon_opacity_uno = (-25 + (desplazamientoActual / 1000));
+    let imgLimon_opacity_dos = (-26 + (desplazamientoActual / 1000));
+    let imgLimon_opacity_tres = (-28 + (desplazamientoActual / 1000));
+    let imgLimon_opacity_cuatro = (-27 + (desplazamientoActual / 1000));
 
     if(desplazamientoActual < 25000){
-        panal.eq(3).css('transform',`scale(0)`);
-        panal.eq(4).css('transform',`scale(0)`);
-        panal.eq(5).css('transform',`scale(0)`);
-        $('.infoLimon li').css('transform','translateX(-150%)');
+        imgLimon.eq(0).css('opacity','0');
+        imgLimon.eq(1).css('opacity','0');
+        imgLimon.eq(2).css('opacity','0');
+        imgLimon.eq(3).css('opacity','0');
+        $('.infoLimon li').css('transform','translateX(-200%)');
     }
 
     if(desplazamientoActual > 25000){
-        panal.eq(3).css('transform',`scale(${((panal_scale_cuatro <= 1)?panal_scale_cuatro:1)})`);
+        imgLimon.eq(0).css('opacity',`${((imgLimon_opacity_uno <= 1)?imgLimon_opacity_uno:1)}`);
         $('.infoLimon li').eq(0).css('transform','translateX(0%)');
     }
 
     if(desplazamientoActual > 26000){
-        panal.eq(4).css('transform',`scale(${((panal_scale_cinco <= 1)?panal_scale_cinco:1)})`);
+        imgLimon.eq(1).css('opacity',`${((imgLimon_opacity_dos <= 1)?imgLimon_opacity_dos:1)}`);romero_sin_fondo
         $('.infoLimon li').eq(1).css('transform','translateX(0%)');
     }
 
-    if(desplazamientoActual > 27000){
-        panal.eq(5).css('transform',`scale(${((panal_scale_seis <= 1)?panal_scale_seis:1)})`);
+    if(desplazamientoActual > 28000){
+        imgLimon.eq(2).css('opacity',`${((imgLimon_opacity_tres <= 1)?imgLimon_opacity_tres:1)}`);
         $('.infoLimon li').eq(2).css('transform','translateX(0%)');
     }
 
+    if(desplazamientoActual > 27000){
+        imgLimon.eq(3).css('opacity',`${((imgLimon_opacity_cuatro <= 1)?imgLimon_opacity_cuatro:1)}`);
+    }
 
+    if(desplazamientoActual > 33200){
+        $('#contenedor_cuatro h2').css('transform','translate(5%,0%)');
+    }else{
+        $('#contenedor_cuatro h2').css('transform','translate(-100%,0%)');
+    }
+
+
+    if(desplazamientoActual > 35000){
+        $('#contenedor_cuatro h2').css('transform','translate(5%,600%)');
+    }
+
+    if(desplazamientoActual > 38000){
+        $('#contenedor_cuatro h2').css('transform','translate(5%,0%)');
+    }
+
+
+    if($(window).width() < 1600){
+
+        if(desplazamientoActual > 38800){
+            $('#romero_sin_fondo').css('bottom','150px');
+        }else{
+            $('#romero_sin_fondo').css('bottom','-500px');
+        }
+
+        if(desplazamientoActual > 38800){
+            $('#parrafo_romero li').eq(0).css('transform','translate(50px,-350px)');
+        }else{
+            $('#parrafo_romero li').eq(0).css('transform','translate(50px,0px)');
+        }
+
+        if(desplazamientoActual > 39000){
+            $('#parrafo_romero li').eq(1).css('transform','translate(50px,-300px)');
+        }else{
+            $('#parrafo_romero li').eq(1).css('transform','translate(50px,0px)');
+        }
+
+        if(desplazamientoActual > 39200){
+            $('#parrafo_romero li').eq(2).css('transform','translate(50px,-250px)');
+        }else{
+            $('#parrafo_romero li').eq(2).css('transform','translate(50px,0px)');
+        }
+
+    }else{
+
+        if(desplazamientoActual > 38800){
+            $('#romero_sin_fondo').css('bottom','240px');
+        }else{
+            $('#romero_sin_fondo').css('bottom','-500px');
+        }
+
+        if(desplazamientoActual > 38800){
+            $('#parrafo_romero li').eq(0).css('transform','translate(50px,-650px)');
+        }else{
+            $('#parrafo_romero li').eq(0).css('transform','translate(50px,0px)');
+        }
+
+        if(desplazamientoActual > 39000){
+            $('#parrafo_romero li').eq(1).css('transform','translate(50px,-550px)');
+        }else{
+            $('#parrafo_romero li').eq(1).css('transform','translate(50px,0px)');
+        }
+
+        if(desplazamientoActual > 39200){
+            $('#parrafo_romero li').eq(2).css('transform','translate(50px,-450px)');
+        }else{
+            $('#parrafo_romero li').eq(2).css('transform','translate(50px,0px)');
+        }
+
+    }
+
+
+    if(desplazamientoActual > 39000 && desplazamientoActual < 40100){
+
+        let opacity_titulo = (40.3 - (desplazamientoActual / 1000));
+
+        $('#contenedor_cuatro h2').css('opacity',`${opacity_titulo}`);
+    }
+
+
+
+    if(desplazamientoActual > 40300){
+        $('#contenedorFlor').css('transform','scale(0.7)');
+    }else{
+        $('#contenedorFlor').css('transform','scale(0.2)');
+    }
+
+    if(desplazamientoActual > 40450){
+        $('#hojaFlor1').css('opacity',1);
+
+    }else{
+        $('#hojaFlor1').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 40500){
+        $('#hojaFlor2').css('opacity',1);
+    }else{
+        $('#hojaFlor2').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 40550){
+        $('#hojaFlor3').css('opacity',1);
+    }else{
+        $('#hojaFlor3').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 40600){
+        $('#hojaFlor3').css('opacity',1);
+    }else{
+        $('#hojaFlor3').css('opacity',0);
+    }
+    
+    if(desplazamientoActual > 40650){
+        $('#hojaFlor3').css('opacity',1);
+    }else{
+        $('#hojaFlor3').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 40700){
+        $('#hojaFlor3').css('opacity',1);
+    }else{
+        $('#hojaFlor3').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 40750){
+        $('#hojaFlor4').css('opacity',1);
+    }else{
+        $('#hojaFlor4').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 40800){
+        $('#hojaFlor5').css('opacity',1);
+    }else{
+        $('#hojaFlor5').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 40850){
+        $('#hojaFlor6').css('opacity',1);
+    }else{
+        $('#hojaFlor6').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 40900){
+        $('#hojaFlor7').css('opacity',1);
+    }else{
+        $('#hojaFlor7').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 40950){
+        $('#hojaFlor8').css('opacity',1);
+    }else{
+        $('#hojaFlor8').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 41000){
+        $('#hojaFlor9').css('opacity',1);
+    }else{
+        $('#hojaFlor9').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 41050){
+        $('#hojaFlor10').css('opacity',1);
+    }else{
+        $('#hojaFlor10').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 41100){
+        $('#hojaFlor11').css('opacity',1);
+    }else{
+        $('#hojaFlor11').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 41150){
+        $('#hojaFlor12').css('opacity',1);
+    }else{
+        $('#hojaFlor12').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 41200){
+        $('#hojaFlor13').css('opacity',1);
+    }else{
+        $('#hojaFlor13').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 41250){
+        $('#hojaFlor14').css('opacity',1);
+    }else{
+        $('#hojaFlor14').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 41300){
+        $('#hojaFlor15').css('opacity',1);
+    }else{
+        $('#hojaFlor15').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 41350){
+        $('#hojaFlor16').css('opacity',1);
+    }else{
+        $('#hojaFlor16').css('opacity',0);
+    }
+
+    if(desplazamientoActual > 43000){
+        $('#contenedorFlor').css('transform','translateX(-300px) scale(0.55)');
+    }
 
 });
 
