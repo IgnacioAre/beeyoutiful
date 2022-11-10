@@ -1,0 +1,87 @@
+/* CONTENIDO PRESENTACIONES */
+
+main{
+    min-height: 100vh;
+    background-image: linear-gradient(to top, #f8dad0 0%, #fffffa 100%);
+}
+
+.contenidoPresentaciones{
+    padding-top: 150px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 150px;
+}
+
+.contenidoPresentaciones .titulo{
+    font-size: 40pt;
+    font-family: 'Cabin Sketch', cursive;
+    color: #444;
+}
+
+.contenidoPresentaciones .contenedorCards{
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-around;
+    gap: 150px;  
+    flex-wrap: wrap;
+}
+
+.contenidoPresentaciones .card{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    border: 10px solid #fff;
+    box-shadow: 5px 5px 10px #cd9d8e;
+}
+
+.contenidoPresentaciones .card .clickeable{
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 400px;
+}
+
+.contenidoPresentaciones .card span{
+    font-size: 18pt;
+    font-family: 'Cabin Sketch', cursive;
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.contenidoPresentaciones .liston{
+    position: absolute;
+    bottom: -100px;
+    left: -25px;
+    width: 350px;
+    filter: drop-shadow(2px 2px 5px #cd9d8e);
+}
+
+.balsamo_vainilla{
+    background-image: url("../img/balsamo_vainilla.jpeg");
+}
+
+.balsamo_calendula{
+    background-image: url("../img/balsamo_calendula.jpeg");
+}
+
+.cera_limon{
+    background-image: url("../img/cera_limon.jpeg");
+}
+
+.cera_romero{
+    background-image: url("../img/cera_romero.jpeg");
+}
+
+@media screen and (max-width: 600px){
+    .contenidoPresentaciones{
+        padding-top: 200px;
+    }
+}

@@ -1,13 +1,13 @@
 let menu_principal = $('#menu_principal');
 const panal = $('.panal');
-const clickeable = $('.clickeable');
 let imgLimon = $('.imgLimon');
 const intro =  document.querySelector('#intro');
 const contenedor_uno =  document.querySelector('#contenedor_uno');
 const video = document.querySelector('video');
 const text = $('.tituloIntro');
-const contenedorModalIMG = $('#contenedorModalIMG');
-let cerrarModalIMG = $('#cerrarModalIMG');
+
+let rama_vainilla = $('#rama_vainilla');
+let flor_vainilla = $('#flor_vainilla');
 
 const bee = $('#img_bee');
 const you = $('#img_you');
@@ -15,46 +15,6 @@ const tiful = $('#img_tiful');
 
 const controller = new ScrollMagic.Controller();
 
-
-clickeable.click((e)=>{
-    let element = $(e.target);
-    let path = urlCompleta+'assets/img/';
-
-    let url = element.css("background-image").split('"');
-    let name = url[1].split('/')[5];
-
-    $('#imgGrande').attr('src',path+name);
-    contenedorModalIMG.css('display','flex');
-    contenedorModalIMG.fadeIn('slow');
-});
-
-cerrarModalIMG.click(()=>{
-    contenedorModalIMG.fadeOut();
-});
-
-contenedorModalIMG.click((e)=>{
-
-    if($(e.target).attr('id') != 'cerrarModalIMG' &&$(e.target).attr('id') != 'imgGrande'){
-        cerrarModalIMG.css('transform','rotate(-20deg)');
-    
-        setTimeout(() => {
-            cerrarModalIMG.css('transform','rotate(20deg)');
-        }, 100);
-    
-        setTimeout(() => {
-            cerrarModalIMG.css('transform','rotate(-20deg)');
-        }, 200);
-    
-        setTimeout(() => {
-            cerrarModalIMG.css('transform','rotate(20deg)');
-        }, 300);
-    
-        setTimeout(() => {
-            cerrarModalIMG.css('transform','rotate(0deg)');
-        }, 400);
-    }
-
-});
 
 //Animación video inicial
 
@@ -189,11 +149,11 @@ $(document).on("scroll", function(){
     //Texto Hidden
 
 
-    if(desplazamientoActual > 5500 && desplazamientoActual < 12900){
+    if(desplazamientoActual > 5500 && desplazamientoActual < 13900){
 
-        let desplazamiento_mask_uno = (-1800 + ((desplazamientoActual / 10) * 2.7));
-        let desplazamiento_mask_dos = (-2200 + ((desplazamientoActual / 10) * 2.7));
-        let desplazamiento_mask_tres = (-2600 + ((desplazamientoActual / 10) * 2.8));
+        let desplazamiento_mask_uno = (-1800 + ((desplazamientoActual / 10) * 3));
+        let desplazamiento_mask_dos = (-2200 + ((desplazamientoActual / 10) * 2.8));
+        let desplazamiento_mask_tres = (-2600 + ((desplazamientoActual / 10) * 2.6));
 
         mask.eq(0).css('transform',`translate(${((desplazamiento_mask_uno >= 0 && desplazamiento_mask_uno)?desplazamiento_mask_uno:0)}px,0px)`);
         contentTextosHidden.eq(0).css('transform',`translate(0px,-${(-550 + ((desplazamientoActual / 10) * 0.8))}px)`);
@@ -211,22 +171,19 @@ $(document).on("scroll", function(){
     if(desplazamientoActual >= 5500){
 
         menu_principal.find('div').eq(0).css('opacity','0');
-        setTimeout(() => {
-            menu_principal.find('div').eq(1).css('opacity','0');
-        }, 200);
+        menu_principal.find('div').eq(1).css('opacity','0');
+        menu_principal.find('#beeyoutiful_circle').css('opacity','0');
 
 
     }else{
 
-
         menu_principal.find('div').eq(0).css('opacity','1');
-        setTimeout(() => {
-            menu_principal.find('div').eq(1).css('opacity','1');
-        }, 200);
+        menu_principal.find('div').eq(1).css('opacity','1');
+        menu_principal.find('#beeyoutiful_circle').css('opacity','1');
 
     }
 
-    if(desplazamientoActual >= 5800){
+    if(desplazamientoActual >= 6300){
         menu_principal.find('div').eq(0).fadeOut();
         menu_principal.find('div').eq(1).fadeOut();
     }else{
@@ -236,13 +193,13 @@ $(document).on("scroll", function(){
 
 
 
-    if(desplazamientoActual > 13000){
+    if(desplazamientoActual > 13900){
         contentTextosHidden.fadeOut('fast');
     }else{
         contentTextosHidden.fadeIn('fast');
     }
 
-    if(desplazamientoActual > 13800){
+    if(desplazamientoActual > 14200){
         $('#contenedor_dos').css('background-color','#e7c341');
     }else{
         $('#contenedor_dos').css('background-color','#f8dad0');
@@ -266,7 +223,7 @@ $(document).on("scroll", function(){
     }
 
     if(desplazamientoActual > 13000){
-        $('.contenedorPanal h2').css('transform',`matrix3d(${((matrix_uno <= 2.5) ? matrix_uno : 2.5)}, 0, 0, 0, 0, ${((matrix_dos <= 2.2) ? matrix_dos : 2.2)}, ${((matrix_tres <= 0) ? matrix_tres : 0)}, 0, 0, ${((matrix_cuatro >= 0) ? matrix_cuatro : 0)}, ${((matrix_cinco <= 1) ? matrix_cinco : 1)}, 0, 0, ${((matrix_seis >= 0.2) ? matrix_seis : 0.2)}, 0, 1)`);
+        $('#titulo_contenedor_tres').css('transform',`matrix3d(${((matrix_uno <= 2.5) ? matrix_uno : 2.5)}, 0, 0, 0, 0, ${((matrix_dos <= 2.2) ? matrix_dos : 2.2)}, ${((matrix_tres <= 0) ? matrix_tres : 0)}, 0, 0, ${((matrix_cuatro >= 0) ? matrix_cuatro : 0)}, ${((matrix_cinco <= 1) ? matrix_cinco : 1)}, 0, 0, ${((matrix_seis >= 0.2) ? matrix_seis : 20)}, 0, 1)`);
     }
 
     if(desplazamientoActual < 18500){
@@ -322,26 +279,34 @@ $(document).on("scroll", function(){
     if(desplazamientoActual > 23000 && desplazamientoActual < 24000){
         $('#titulo_contenedor_tres').css('width','0px');
 
-        setTimeout(() => {
-            $('#titulo_contenedor_tres').css('font-size','80pt');
-            $('#titulo_contenedor_tres').text('PROPIEDADES DE LA MIEL');
-        }, 400);
-
-        if($(window).width() < 1600){
-            $('#formaLimon').css('transform','translate(150%, 900px)');
+        
+        if($(window).width() < 780){
+            setTimeout(() => {
+                $('#titulo_contenedor_tres').css('font-size','30pt');
+                $('#titulo_contenedor_tres').text('PROPIEDADES DE LA MIEL');
+            }, 400);
         }else{
-            $('#formaLimon').css('transform','translate(200%, 900px)');
+            setTimeout(() => {
+                $('#titulo_contenedor_tres').css('font-size','80pt');
+                $('#titulo_contenedor_tres').text('PROPIEDADES DE LA MIEL');
+            }, 400);
         }
+
+        $('#formaLimon').css('transform','translate(200%, 900px)');
 
     }else if(desplazamientoActual > 24000){
         $('#titulo_contenedor_tres').text('BENEFICIOS DEL LIMÓN EN EL CABELLO');
         $('#titulo_contenedor_tres').css('width','100%');
-        $('#titulo_contenedor_tres').css('font-size','50pt');
-        if($(window).width() < 1600){
-            $('#formaLimon').css('transform','translate(150%, -100px)');
+
+
+        if($(window).width() < 780){
+            $('#formaLimon').css('transform','translate(0%, -170px)');
+            $('#titulo_contenedor_tres').css('font-size','30pt');
         }else{
-            $('#formaLimon').css('transform','translate(200%, -100px)');
+            $('#formaLimon').css('transform','translate(150%, -100px)');
+            $('#titulo_contenedor_tres').css('font-size','50pt');
         }
+            
     }
 
 
@@ -360,17 +325,17 @@ $(document).on("scroll", function(){
 
     if(desplazamientoActual > 25000){
         imgLimon.eq(0).css('opacity',`${((imgLimon_opacity_uno <= 1)?imgLimon_opacity_uno:1)}`);
-        $('.infoLimon li').eq(0).css('transform','translateX(0%)');
+        $('.infoLimon li').eq(0).css('transform','translateX(-40px)');
     }
 
     if(desplazamientoActual > 26000){
         imgLimon.eq(1).css('opacity',`${((imgLimon_opacity_dos <= 1)?imgLimon_opacity_dos:1)}`);romero_sin_fondo
-        $('.infoLimon li').eq(1).css('transform','translateX(0%)');
+        $('.infoLimon li').eq(1).css('transform','translateX(-40px)');
     }
 
     if(desplazamientoActual > 28000){
         imgLimon.eq(2).css('opacity',`${((imgLimon_opacity_tres <= 1)?imgLimon_opacity_tres:1)}`);
-        $('.infoLimon li').eq(2).css('transform','translateX(0%)');
+        $('.infoLimon li').eq(2).css('transform','translateX(-40px)');
     }
 
     if(desplazamientoActual > 27000){
@@ -378,42 +343,37 @@ $(document).on("scroll", function(){
     }
 
     if(desplazamientoActual > 33200){
-        $('#contenedor_cuatro h2').css('transform','translate(5%,0%)');
+        if($(window).width() < 780){
+            $('#contenedor_cuatro h2').css('transform','translateX(0%) scale(0.8)');
+        }else{
+            $('#contenedor_cuatro h2').css('transform','translateX(25%) scale(1.4)');
+        }
     }else{
-        $('#contenedor_cuatro h2').css('transform','translate(-100%,0%)');
-    }
-
-
-    if(desplazamientoActual > 35000){
-        $('#contenedor_cuatro h2').css('transform','translate(5%,600%)');
-    }
-
-    if(desplazamientoActual > 38000){
-        $('#contenedor_cuatro h2').css('transform','translate(5%,0%)');
+        $('#contenedor_cuatro h2').css('transform','translateX(-100%) scale(0)');
     }
 
 
     if($(window).width() < 1600){
 
-        if(desplazamientoActual > 38800){
+        if(desplazamientoActual > 34800){
             $('#romero_sin_fondo').css('bottom','150px');
         }else{
             $('#romero_sin_fondo').css('bottom','-500px');
         }
 
-        if(desplazamientoActual > 38800){
+        if(desplazamientoActual > 34800){
             $('#parrafo_romero li').eq(0).css('transform','translate(50px,-350px)');
         }else{
             $('#parrafo_romero li').eq(0).css('transform','translate(50px,0px)');
         }
 
-        if(desplazamientoActual > 39000){
+        if(desplazamientoActual > 35000){
             $('#parrafo_romero li').eq(1).css('transform','translate(50px,-300px)');
         }else{
             $('#parrafo_romero li').eq(1).css('transform','translate(50px,0px)');
         }
 
-        if(desplazamientoActual > 39200){
+        if(desplazamientoActual > 35200){
             $('#parrafo_romero li').eq(2).css('transform','translate(50px,-250px)');
         }else{
             $('#parrafo_romero li').eq(2).css('transform','translate(50px,0px)');
@@ -421,25 +381,25 @@ $(document).on("scroll", function(){
 
     }else{
 
-        if(desplazamientoActual > 38800){
+        if(desplazamientoActual > 34800){
             $('#romero_sin_fondo').css('bottom','240px');
         }else{
             $('#romero_sin_fondo').css('bottom','-500px');
         }
 
-        if(desplazamientoActual > 38800){
+        if(desplazamientoActual > 34800){
             $('#parrafo_romero li').eq(0).css('transform','translate(50px,-650px)');
         }else{
             $('#parrafo_romero li').eq(0).css('transform','translate(50px,0px)');
         }
 
-        if(desplazamientoActual > 39000){
+        if(desplazamientoActual > 35000){
             $('#parrafo_romero li').eq(1).css('transform','translate(50px,-550px)');
         }else{
             $('#parrafo_romero li').eq(1).css('transform','translate(50px,0px)');
         }
 
-        if(desplazamientoActual > 39200){
+        if(desplazamientoActual > 35200){
             $('#parrafo_romero li').eq(2).css('transform','translate(50px,-450px)');
         }else{
             $('#parrafo_romero li').eq(2).css('transform','translate(50px,0px)');
@@ -447,140 +407,214 @@ $(document).on("scroll", function(){
 
     }
 
+    if($(window).width() < 780){
+        if(desplazamientoActual > 34000 && desplazamientoActual < 36100){
 
-    if(desplazamientoActual > 39000 && desplazamientoActual < 40100){
+            let opacity_titulo = (35.2 - (desplazamientoActual / 1000));
 
-        let opacity_titulo = (40.3 - (desplazamientoActual / 1000));
+            $('#contenedor_cuatro h2').css('opacity',`${opacity_titulo}`);
+        }
+    }else{
+        if(desplazamientoActual > 35000 && desplazamientoActual < 36100){
 
-        $('#contenedor_cuatro h2').css('opacity',`${opacity_titulo}`);
+            let opacity_titulo = (36.3 - (desplazamientoActual / 1000));
+    
+            $('#contenedor_cuatro h2').css('opacity',`${opacity_titulo}`);
+        }
     }
 
 
 
-    if(desplazamientoActual > 40300){
-        $('#contenedorFlor').css('transform','scale(0.7)');
+
+    if(desplazamientoActual > 36300 && desplazamientoActual){
+
+        if($(window).width() < 780){
+            $('#contenedorFlor').css('transform','scale(0.4)');
+        }else{
+            $('#contenedorFlor').css('transform','scale(0.7)');
+        }
     }else{
         $('#contenedorFlor').css('transform','scale(0.2)');
     }
 
-    if(desplazamientoActual > 40450){
+    if(desplazamientoActual > 36450){
         $('#hojaFlor1').css('opacity',1);
 
     }else{
         $('#hojaFlor1').css('opacity',0);
     }
 
-    if(desplazamientoActual > 40500){
+    if(desplazamientoActual > 36500){
         $('#hojaFlor2').css('opacity',1);
     }else{
         $('#hojaFlor2').css('opacity',0);
     }
 
-    if(desplazamientoActual > 40550){
+    if(desplazamientoActual > 36550){
         $('#hojaFlor3').css('opacity',1);
     }else{
         $('#hojaFlor3').css('opacity',0);
     }
 
-    if(desplazamientoActual > 40600){
+    if(desplazamientoActual > 36600){
         $('#hojaFlor3').css('opacity',1);
     }else{
         $('#hojaFlor3').css('opacity',0);
     }
     
-    if(desplazamientoActual > 40650){
+    if(desplazamientoActual > 36650){
         $('#hojaFlor3').css('opacity',1);
     }else{
         $('#hojaFlor3').css('opacity',0);
     }
 
-    if(desplazamientoActual > 40700){
+    if(desplazamientoActual > 36700){
         $('#hojaFlor3').css('opacity',1);
     }else{
         $('#hojaFlor3').css('opacity',0);
     }
 
-    if(desplazamientoActual > 40750){
+    if(desplazamientoActual > 36750){
         $('#hojaFlor4').css('opacity',1);
     }else{
         $('#hojaFlor4').css('opacity',0);
     }
 
-    if(desplazamientoActual > 40800){
+    if(desplazamientoActual > 36800){
         $('#hojaFlor5').css('opacity',1);
     }else{
         $('#hojaFlor5').css('opacity',0);
     }
 
-    if(desplazamientoActual > 40850){
+    if(desplazamientoActual > 36850){
         $('#hojaFlor6').css('opacity',1);
     }else{
         $('#hojaFlor6').css('opacity',0);
     }
 
-    if(desplazamientoActual > 40900){
+    if(desplazamientoActual > 36900){
         $('#hojaFlor7').css('opacity',1);
     }else{
         $('#hojaFlor7').css('opacity',0);
     }
 
-    if(desplazamientoActual > 40950){
+    if(desplazamientoActual > 36950){
         $('#hojaFlor8').css('opacity',1);
     }else{
         $('#hojaFlor8').css('opacity',0);
     }
 
-    if(desplazamientoActual > 41000){
+    if(desplazamientoActual > 37000){
         $('#hojaFlor9').css('opacity',1);
     }else{
         $('#hojaFlor9').css('opacity',0);
     }
 
-    if(desplazamientoActual > 41050){
+    if(desplazamientoActual > 37050){
         $('#hojaFlor10').css('opacity',1);
     }else{
         $('#hojaFlor10').css('opacity',0);
     }
 
-    if(desplazamientoActual > 41100){
+    if(desplazamientoActual > 37100){
         $('#hojaFlor11').css('opacity',1);
     }else{
         $('#hojaFlor11').css('opacity',0);
     }
 
-    if(desplazamientoActual > 41150){
+    if(desplazamientoActual > 37150){
         $('#hojaFlor12').css('opacity',1);
     }else{
         $('#hojaFlor12').css('opacity',0);
     }
 
-    if(desplazamientoActual > 41200){
+    if(desplazamientoActual > 37200){
         $('#hojaFlor13').css('opacity',1);
     }else{
         $('#hojaFlor13').css('opacity',0);
     }
 
-    if(desplazamientoActual > 41250){
+    if(desplazamientoActual > 37250){
         $('#hojaFlor14').css('opacity',1);
     }else{
         $('#hojaFlor14').css('opacity',0);
     }
 
-    if(desplazamientoActual > 41300){
+    if(desplazamientoActual > 37300){
         $('#hojaFlor15').css('opacity',1);
     }else{
         $('#hojaFlor15').css('opacity',0);
     }
 
-    if(desplazamientoActual > 41350){
+    if(desplazamientoActual > 37350){
         $('#hojaFlor16').css('opacity',1);
     }else{
         $('#hojaFlor16').css('opacity',0);
     }
 
-    if(desplazamientoActual > 43000){
-        $('#contenedorFlor').css('transform','translateX(-300px) scale(0.55)');
+    if($(window).width() < 780){
+        if(desplazamientoActual > 38000){
+            $('#contenedorFlor').css('opacity','0.2');
+        }else{
+            $('#contenedorFlor').css('opacity','1');
+        }
+    }else{
+        if(desplazamientoActual > 38000){
+            $('#contenedorFlor').css('transform','translateX(-300px) scale(0.55)');
+        }
     }
+
+    if(desplazamientoActual > 39000 && desplazamientoActual <= 43450){
+
+        if($(window).width() < 780){
+
+           //Rama
+
+           let desplazamiento_rama_vainilla = (11300 - ((desplazamientoActual / 10) * 2.70));
+           rama_vainilla.css('left',-1 * (360 + desplazamiento_rama_vainilla) + 'px');
+
+
+
+           //Flor
+
+           let desplazamiento_flor_vainilla = (11700 - ((desplazamientoActual / 10) * 2.78));
+           let rotacion_flor = (11700 - ((desplazamientoActual / 10) * 2.78));
+
+           flor_vainilla.css('transform','rotate('+rotacion_flor+'deg)');
+           flor_vainilla.css('right',-200 - desplazamiento_flor_vainilla + 'px'); 
+
+        }else{
+
+            //Rama
+
+            let desplazamiento_rama_vainilla = (11300 - ((desplazamientoActual / 10) * 2.70));
+            rama_vainilla.css('left',-1 * (360 + desplazamiento_rama_vainilla) + 'vw');
+
+
+
+            //Flor
+
+            let desplazamiento_flor_vainilla = (11700 - ((desplazamientoActual / 10) * 2.78));
+            let rotacion_flor = (11700 - ((desplazamientoActual / 10) * 2.78));
+
+            flor_vainilla.css('transform','rotate('+rotacion_flor+'deg)');
+            flor_vainilla.css('right',-200 - desplazamiento_flor_vainilla);
+
+        }
+
+
+        
+    }
+
+
+    if(desplazamientoActual < 43000){
+        $('#listaElementosVainilla').css('left','-200%');
+    }
+
+    if(desplazamientoActual > 43450){
+        $('#listaElementosVainilla').css('left','50px');
+    }
+
 
 });
 

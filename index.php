@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?php echo SERVER_URL; ?>assets/css/index.css">
     <link rel="Shortcut Icon" type="image/x-icon" href="<?php echo SERVER_URL; ?>assets/img/icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
     <script src="<?php echo SERVER_URL; ?>js/JQuery.js"></script>
     <script src="<?php echo SERVER_URL; ?>js/sweetalert2.js"></script>
     <script src="<?php echo SERVER_URL; ?>ScrollMagic/ScrollMagic.min.js"></script>
@@ -26,6 +27,10 @@
 </head>
 <body>
 
+    <div id="contenedorModalIMG">
+        <img id="imgGrande" src="" alt="Imagen">
+        <span id="cerrarModalIMG">X</span>
+    </div>
 
     <?php
     
@@ -60,12 +65,6 @@
     // ################## FIN PARAMETROS ##################
 
 
-    echo '
-    <div id="menu_principal">
-        <div><img src="'.SERVER_URL.'assets/img/balsamo.png" /> <span>BALSAMO LABIAL</span></div>
-        <div><img src="'.SERVER_URL.'assets/img/cera.png" /> <span>CERA CAPILAR</span></div>
-    </div>';
-
 
     //  DEFINICIÓN DE RUTAS
 
@@ -77,6 +76,15 @@
         case '': 
             include_once base_url.'inicio.php';
             break;
+
+        case 'balsamo': 
+            include_once base_url.'balsamo.php';
+            break;
+
+        case 'cera': 
+            include_once base_url.'cera.php';
+            break;
+        
             
         default: 
             include_once base_url.'error_404.php'; 
@@ -85,7 +93,7 @@
 
 
     ?>
-    
+
 
 </body>
 </html>

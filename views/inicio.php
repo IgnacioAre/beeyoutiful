@@ -1,10 +1,18 @@
 
 <head>
     <link rel="stylesheet" href="<?php echo SERVER_URL; ?>assets/css/inicio.css">
-    <title>BEEYOUTIFUL</title>
+    <title>BEEYOUTIFUL | Inicio</title>
 </head>
 
 <main>
+    
+    <?php
+        echo'<div id="menu_principal">
+                <img id="beeyoutiful_circle" src="'.SERVER_URL.'assets/img/beeyoutiful_circle.svg" width="70px" />
+                <div id="irBalsamo"><img src="'.SERVER_URL.'assets/img/balsamo.png" /> <span>BALSAMO LABIAL</span></div>
+                <div id="irCera"><img src="'.SERVER_URL.'assets/img/cera.png" /> <span>CERA CAPILAR</span></div>
+            </div>';
+    ?>
 
     <div id="intro">
         <div id="contenedorLetras">
@@ -19,13 +27,13 @@
         <div class="clickeable" id="img_uno"></div>
         <div id="contenedor_texto_uno">
             <span id="t1">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, perferendis.
+                En nuestra profesión muchas veces realizamos trabajos donde necesitamos modelar el cabello para lograr un resultado óptimo del peinado.
             </span>
             <span id="t2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, magni!
+                La cera modeladora es un producto de fácil manejo y nos permite realizar un trabajo prolijo, por lo tanto consideramos interesante elaborar un producto natural.
             </span>
             <span id="t3">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, perferendis.
+                Creímos interesante también hacer un bálsamo de labios casero, que evite la deshidratación y pueda ser utilizado por toda la familia y todos los tipos de piel, incursionando en la cosmética ecológica y natural.
             </span>
         </div>
         
@@ -34,17 +42,17 @@
     <section id="contenedor_dos">
 
         <div class="contentTextosHidden">
-            <span class="texto_dos">Lorem ipsum dolor sit amet.</span>
+            <span class="texto_dos">Utilizamos como ingrediente base la cera natural de abejas</span>
             <div class="mask"></div>
         </div>
 
         <div class="contentTextosHidden">
-            <span class="texto_dos">Lorem ipsum dolor sit amet consectetur adipisicing.</span>
+            <span class="texto_dos">y escogimos una variedad de aromas para obtener diferentes beneficios</span>
             <div class="mask"></div>
         </div>
 
         <div class="contentTextosHidden">
-            <span class="texto_dos">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+            <span class="texto_dos">y a su vez tener más variedad en nuestros productos.</span>
             <div class="mask"></div>
         </div>
     </section>
@@ -91,10 +99,6 @@
                 <li>Ayuda a mantenerlo brillante</li>
             </ul>
 
-
-            <!-- <video id="videoElaboracion" preload controls>
-                <source src="<?php //echo SERVER_URL; ?>assets/img/elaboracion.mp4" type="video/mp4">
-            </video> -->
         </div>
     </section>
 
@@ -139,18 +143,34 @@
         <ul id="listaElementosCalendula">
             <h3>BENEFICIOS DE LA CALÉNDULA</h3>
             <li>Tiene propiedades regeneradoras y cicatrizantes.</li>
-            <li>Su poder emoliente e hidratante lo hace muy indicado <br> para ser utilizado por vía tópica</li>
+            <li>Su poder emoliente e hidratante lo hace muy indicado <br> para ser utilizado por vía tópica.</li>
             <li>Potencia la correcta producción de colágeno y glucoproteínas.</li>
             <li>Rica en vitamina E, lo que aporta protección y nutrición a las células.</li>
         </ul>
 
     </section>
 
+    <section id="contenedor_seis">
 
-    <div id="contenedorModalIMG">
-        <img id="imgGrande" src="" alt="Imagen">
-        <span id="cerrarModalIMG">X</span>
-    </div>
+        <div id="contenedorVainilla">
+            <img id="rama_vainilla" src="<?php echo SERVER_URL; ?>assets/img/rama_vainilla.png" alt="">
+            <img id="flor_vainilla" src="<?php echo SERVER_URL; ?>assets/img/flor_vainilla.png" alt="">
+            <ul id="listaElementosVainilla">
+                <h3>BENEFICIOS DE LA VAINILLA</h3>
+                <li>Tiene propiedades relajantes.</li>
+                <li>Propiedades antibacterianas y antioxidantes</li>
+                <li>Potencia la correcta producción de colágeno y glucoproteínas.</li>
+                <li>Hidrata la piel en profundidad y actúa creando una película protectora sobre los labios para repararlos.</li>
+            </ul>
+        </div>
+        
+    </section>
+
+    <section id="contenedor_siete">
+        <h2>PROCESO DE UNIFICACIÓN DE INGREDIENTES</h2>
+        <video autoplay loop muted src="<?php echo SERVER_URL; ?>assets/img/elaboracion.mp4"></video>
+    </section>
+
 
 </main>
 
