@@ -4,7 +4,6 @@
     filter: sepia(0.3);
 }
 
-
 #intro video{
     height: 100%;
     width: 100%;
@@ -18,6 +17,51 @@
     transform: translate(-50%,-50%);
     display: flex;
     gap: 20px;
+}
+
+#menu_principal_footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:20px;
+    display: none;
+    padding-bottom: 20px;
+}
+
+#menu_principal_footer div{
+    background-color: rgba(255, 208, 0, 0.3);
+    box-shadow: 2px 2px 10px rgb(132, 91, 1);
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 10px 40px;
+    width: 290px;
+    transition: all 400ms;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+#menu_principal_footer div:hover{
+    box-shadow: 0px 0px 20px var(--amarillo);
+    background-color: rgba(255, 208, 0, 0.5);
+}
+
+
+#menu_principal_footer div span{
+    font-size: 15pt;
+    letter-spacing: 2px;
+    font-family: 'Cabin Sketch', cursive;
+}
+
+#menu_principal_footer div img{
+    height: 40px;
 }
 
 .letras{
@@ -73,7 +117,7 @@
     height: 8000px;
     width: 100%;
     background-color: #f8dad0;
-    transition: background-color 300ms;
+    transition: background-color 200ms;
 }
 
 .showUp{
@@ -96,7 +140,7 @@
 }
 
 #contenedor_texto_uno span{
-    font-size: 19pt;
+    font-size: 22pt;
     opacity: 0;
     transition: all 1s;
     text-transform: uppercase;
@@ -159,16 +203,10 @@
     position: relative;
 }
 
-#titulo_contenedor_tres{
-    transition: width 500ms;
-    overflow: hidden;
-    white-space:nowrap;
-}
-
 
 .contenedorPanal{
     position: sticky;
-    top: 300px;
+    top: 340px;
     filter: drop-shadow(0px 0px 15px rgb(152, 145, 36));
 }
 
@@ -177,24 +215,32 @@
 transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 *\/, 0 /* Estira eje X y vuelve *\/, 0 /* Rotación eje X -> 0.006 *\/, 0 /* Estira eje X en forma de paralelogramo -> 0.2 *\/, 1 /* Estira eje Y -> 2 *\/ , 0 /* Estira eje Y y vuelve *\/, 0 /* Rotación eje Y -> 0.006 *\/, 0, 0, 1 /* 0 invisible, 1 visible *\/, 0, 0 /* desplazamiento X -> 100 *\/, 0 /* desplazamiento Y -> 100 *\/, 0, 1 /* Acercamiento -> 2 *\/);
 */
 
-#titulo_contenedor_tres{
+#contenedorTituloTres{
     position: absolute;
     top: -300px;
-    left: 0;
+    left: -100px;
     overflow: visible;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+    min-height: 800px;
+    overflow: hidden;
+}
+
+
+#titulo_contenedor_tres{
     text-align: center;
     font-size: 80pt;
     z-index: 10;
     color: #6a6900;
     font-family: 'Cabin Sketch', cursive;
-    transform: matrix3d(1, 0, 0, 0, 0, 6, -1, 0, 0, 1, 6, 0, 0, 109.5, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 
 .panal{
     width: 300px;
     height: 280px;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    z-index: 10;
 }
 
 .panal:nth-child(1){
@@ -250,16 +296,17 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
 
 .infoLimon{
     position: absolute;
-    top: 5%;
-    left: 10%;
+    top: 32% !important;
+    left: -100px !important;
     z-index: -1;
+    padding-left: 40px;
+    transition: all 400ms;
+    transform: translateX(-200%);
 }
 
 .infoLimon li{
-    font-size: 40pt !important;
+    font-size: 40pt;
     margin-bottom: 40px;
-    transition: transform 400ms;
-    transform: translateX(-200%);
 }
 
 #formaLimon{
@@ -271,7 +318,8 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     border-radius: 20% 50% 20% 50% / 20% 50% 20% 50%;
     background-color: #ffc800;
     transform: translate(150%, 900px);
-    transition: transform 400ms;
+    transition: all 400ms;
+    z-index: 20;
 }
 
 
@@ -316,10 +364,18 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     background-image: linear-gradient(to bottom, #e7c341 0%, #c0dcbc 100%);
 }
 
-#contenedor_cuatro h2{
-    font-size: 50pt;
+#contenedorTituloCuatro{
     position: sticky;
     top: 50px;
+    overflow: hidden;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    padding-top: 50px;
+}
+
+#contenedor_cuatro h2{
+    font-size: 50pt;
     transition: transform 1s;
     color: #4d9244;
     font-family: 'Cabin Sketch', cursive;
@@ -343,8 +399,12 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     width: 70%;
 }
 
+
+
 #parrafo_romero li{
     font-size: 20pt;
+    margin-bottom: 40px;
+    margin-left: 20px;
     transition: transform 400ms;
     list-style-type: '⎔ ';
 }
@@ -392,7 +452,8 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     width: 250px;
     margin: 0 auto;
     margin-bottom: 220px;
-    transition: all 600ms;
+    transition: all 400ms;
+    transform: scale(0.2);
 }
 
 #centroFlor{
@@ -530,6 +591,9 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
 #contenedorVainilla{
     position: sticky;
     top: 100px;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
 }
 
 #rama_vainilla{
@@ -548,7 +612,7 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     position: absolute;
     left: -200%;
     top: 0;
-    transition: all 400ms;
+    transition: all 1s;
 }
 
 #listaElementosVainilla h3{
@@ -568,7 +632,7 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
 /* Contenedor siete */
 
 #contenedor_siete{
-    height: 110vh;
+    height: 1000px;
     width: 100%;
     position: relative;
     background-color: #f6e1bd;
@@ -584,11 +648,18 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     z-index: 10;
 }
 
+#contenedor_siete p{
+    font-size: 38pt;
+    margin-top: 120px;
+    margin-left: 300px;
+    width: 500px;
+}
+
 #contenedor_siete video{
     width: 320px;
     position: absolute;
-    bottom: 50px;
-    right: 200px;
+    top: 300px;
+    right: 300px;
     border-radius: 20px;
     box-shadow: 5px 5px 10px #a89472;
 }
@@ -597,11 +668,14 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
 @media screen and (max-width: 780px){
     .letras{
         height: 70px;
+        opacity: 1;
     }
+
     #img_uno{
         width: 90%;
         height: 400px;
         margin-left: 20px;
+        display: none;
     }
     #contenedor_texto_uno{
         width: 100%;
@@ -609,31 +683,28 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
         text-shadow: 1px 1px 2px #fff;
     }
 
-    #img_you{
-        height: 30px;
-    }
-
-    #img_tiful{
-        margin-left: 0px;
-    }
-
-    #img_uno{
-        display: none;
+    #contenedorLetras{
+        width: 100%;
+        gap: 0px;
     }
 
     #img_bee{
-        width: 180px;
+        width: 170px;
         height: 100px;
+        transform: translate(-10px,0px);
     }
 
     #img_you{
-        width: 120px;
-        height: 60px;
+        width: 100px;
+        height: 40px;
+        transform: translate(-20px,100px);
     }
 
     #img_tiful{
-        width: 180px;
-        height: 100px;
+        width: 100px;
+        height: 60px;
+        margin-left: 0;
+        transform: translate(-20px,150px);
     }
 
     #contenedor_texto_uno{
@@ -641,12 +712,21 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     }
 
     .texto_dos{
-        font-size: 30pt;
+        font-size: 20pt;
+        font-weight: 400;
     }
 
     #titulo_contenedor_tres{
         font-size: 30pt;
         left: -70px;
+        min-width: 300px;
+        overflow: hidden;
+        white-space: inherit !important;
+        margin-top: 50px;
+    }
+
+    .contenedorPanal{
+        top: 285px;
     }
 
     .panal{
@@ -654,9 +734,10 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     }
 
     #contenedorPropiedades{
-        top: -250px;
-        left: -60px;
+        top: -100px;
+        left: -40px;
         width: 150%;
+        gap: 20px;
     }
 
     .listaElementos h3{
@@ -668,24 +749,26 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     }
 
     .infoLimon{
-        top: 60%;
+        top: 60% !important;
+        overflow: hidden;
     }
 
     .infoLimon li{
-        font-size: 25pt !important;
+        font-size: 22pt;
         margin-bottom: 10px;
         white-space:nowrap;
     }
 
     #formaLimon{
-        width: 300px;
-        height: 300px;
+        width: 180px !important;
+        height: 180px !important;
     }
     
     .imgLimon{
-        width: 150px;
-        height: 150px;
+        width: 90px;
+        height: 90px;
     }
+
 
     #romero_sin_fondo{
         display: none;
@@ -702,7 +785,7 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     #listaElementosCalendula{
         right: 0px;
         bottom: 90px;
-        width: 100%;
+        width: 100vw;
     }
     
     #listaElementosCalendula h3{
@@ -716,13 +799,11 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
         margin-bottom: 30px;
     }
 
-    #listaElementosVainilla{
-        top: -50px;
-    }
 
     #listaElementosVainilla h3{
         font-size: 35pt;
-        margin-bottom: 120px;
+        margin-bottom: 40px;
+        padding-top: 40px;
     }
 
     #listaElementosVainilla li{
@@ -731,46 +812,89 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
         margin-left: 10px;
     }
 
+    #contenedor_seis{
+        height: 1800px;
+    }
+
+    #contenedorVainilla{
+        height: 100vh;
+        top: 50px;
+    }
+
     #flor_vainilla{
+        left: 50px;
         width: 300px;
         opacity: 0.7;
     }
 
     #rama_vainilla{
+        left: 50px;
         width: 300px;
         opacity: 0.4;
     }
 
     #contenedor_siete{
         height: 100%;
+        padding-bottom: 200px;
+        overflow: hidden;
     }
 
     #contenedor_siete video{
         width: 80%;
         position: relative;
         margin: 0 auto;
-        transform: translateX(250px);
         margin-top: 100px;
+        top: -40px;
+        right: -50px;
     }
 
     #contenedor_siete h2{
-        font-size: 40pt;
+        font-size: 35pt;
     }
 
+    #contenedor_siete p{
+        font-size: 20pt;
+        margin-top: 10px;
+        margin-left: 30px;
+        width: 100%;
+        padding-right: 40px;
+    }
+
+    /* Cambio de height contenedores */
+
+    #contenedor_dos{
+        height: 2600px;
+    }
+
+    #contenedor_tres{
+        height: 4500px;
+    }
+
+    #contenedor_cuatro{
+        height: 1500px;
+    }
+
+    #contenedor_cinco{
+        height: 2200px;
+    }
 }
 
 
-@media screen and (max-width: 560px){
+@media screen and (min-width: 1600px){
 
-    .letras{
-        height: 50px;
+    #contenedor_siete{
+        height: 100vh;
+    }
+    #contenedor_siete p{
+        margin-left: 17%;
     }
 
-    #contenedorLetras{
-        gap: 0px;
+    #parrafo_romero li{
+        font-size: 30pt;
+        margin-bottom: 10px;
     }
-
 }
+
 
 @media screen and (max-width: 400px){
     .letras{

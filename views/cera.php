@@ -8,7 +8,7 @@
     <?php
         echo'<div id="menu_principal">
                 <div id="irInicio"><img src="'.SERVER_URL.'assets/img/home.png" /> <span>IR AL INICIO</span></div>
-                <div id="irBalsamo"><img src="'.SERVER_URL.'assets/img/balsamo.png" /> <span>BALSAMO LABIAL</span></div>
+                <div class="irBalsamo"><img src="'.SERVER_URL.'assets/img/balsamo.png" /> <span>BALSAMO LABIAL</span></div>
             </div>';
     ?>
 

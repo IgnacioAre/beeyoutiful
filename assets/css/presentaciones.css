@@ -80,8 +80,12 @@ main{
     background-image: url("../img/cera_romero.jpeg");
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 780px){
     .contenidoPresentaciones{
         padding-top: 200px;
+    }
+
+    .contenidoPresentaciones .titulo{
+        font-size: 30pt;
     }
 }

@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
     <script src="<?php echo SERVER_URL; ?>js/JQuery.js"></script>
-    <script src="<?php echo SERVER_URL; ?>js/sweetalert2.js"></script>
     <script src="<?php echo SERVER_URL; ?>ScrollMagic/ScrollMagic.min.js"></script>
     <script src="<?php echo SERVER_URL; ?>ScrollMagic/debug.addIndicators.min.js"></script>
     <script src="<?php echo SERVER_URL; ?>ScrollMagic/animation.gsap.min.js"></script>
@@ -21,8 +20,6 @@
     <script src="<?php echo SERVER_URL; ?>ScrollMagic/TimelineLite.min.js"></script>
     <script src="<?php echo SERVER_URL; ?>ScrollMagic/CSSPlugin.min.js"></script>
     <script src="<?php echo SERVER_URL; ?>ScrollMagic/BezierPlugin.min.js"></script>
-    <link rel="stylesheet" href="<?php echo SERVER_URL; ?>assets/css/locomotive-scroll.css">
-    <script src="<?php echo SERVER_URL; ?>js/locomotive-scroll.js"></script>
     <script src="<?php echo SERVER_URL; ?>js/index.js"></script>
 </head>
 <body>

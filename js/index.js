@@ -1,7 +1,13 @@
 let url = $(location).attr('href').split('/');
 const urlCompleta = url[0]+"//"+url[2]+"/";
 
+
 $(document).ready(()=>{
+
+    var $target=$('[alt*="000webhost"]');
+    if($target.length>0){
+        var $div=$target.parent().closest('div').remove();
+    }
 
     const clickeable = $('.clickeable');
     const contenedorModalIMG = $('#contenedorModalIMG');
@@ -52,11 +58,11 @@ $(document).ready(()=>{
         window.location.href = urlCompleta;
     });
     
-    $('#irBalsamo').click(()=>{
-        window.location.href = urlCompleta + 'balsamo';
+    $('.irBalsamo').click(()=>{
+        window.location.href = urlCompleta + '?pagina=balsamo';
     });
     
-    $('#irCera').click(()=>{
-        window.location.href = urlCompleta + 'cera';
+    $('.irCera').click(()=>{
+        window.location.href = urlCompleta + '?pagina=cera';
     });
 });

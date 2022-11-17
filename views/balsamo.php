@@ -8,7 +8,7 @@
     <?php
         echo'<div id="menu_principal">
                 <div id="irInicio"><img src="'.SERVER_URL.'assets/img/home.png" /> <span>IR AL INICIO</span></div>
-                <div id="irCera"><img src="'.SERVER_URL.'assets/img/cera.png" /> <span>CERA CAPILAR</span></div>
+                <div class="irCera"><img src="'.SERVER_URL.'assets/img/cera.png" /> <span>CERA CAPILAR</span></div>
             </div>';
     ?>
 

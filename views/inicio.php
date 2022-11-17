@@ -1,16 +1,28 @@
 
+<?php if(!isset($_GET['pagina'])){ ?>
 <head>
     <link rel="stylesheet" href="<?php echo SERVER_URL; ?>assets/css/inicio.css">
     <title>BEEYOUTIFUL | Inicio</title>
 </head>
 
+<?php
+if(!isset($_GET['width']) )
+{
+echo "<script language=\"JavaScript\">
+<!-- 
+document.location=\"$PHP_SELF?width=\"+screen.width;
+//-->
+</script>";
+}
+?>
+
 <main>
     
     <?php
         echo'<div id="menu_principal">
-                <img id="beeyoutiful_circle" src="'.SERVER_URL.'assets/img/beeyoutiful_circle.svg" width="70px" />
-                <div id="irBalsamo"><img src="'.SERVER_URL.'assets/img/balsamo.png" /> <span>BALSAMO LABIAL</span></div>
-                <div id="irCera"><img src="'.SERVER_URL.'assets/img/cera.png" /> <span>CERA CAPILAR</span></div>
+                <img class="beeyoutiful_circle" src="'.SERVER_URL.'assets/img/beeyoutiful_circle.svg" width="70px" />
+                <div class="irBalsamo"><img src="'.SERVER_URL.'assets/img/balsamo.png" /> <span>BALSAMO LABIAL</span></div>
+                <div class="irCera"><img src="'.SERVER_URL.'assets/img/cera.png" /> <span>CERA CAPILAR</span></div>
             </div>';
     ?>
 
@@ -20,7 +32,7 @@
             <img class="letras" id="img_you" src="<?php echo SERVER_URL; ?>assets/img/you.png" height="100px" alt="">
             <img class="letras" id="img_tiful" src="<?php echo SERVER_URL; ?>assets/img/tiful.png" height="150px" alt="">
         </div>
-        <video src="<?php echo SERVER_URL; ?>assets/video/honey_video.mp4"></video>
+        <video <?php echo ($_GET['width'] < 780) ? "autoplay loop muted" : '' ?> src="<?php echo SERVER_URL; ?>assets/video/honey_video.mp4"></video>
     </div>
 
     <section id="contenedor_uno">
@@ -28,11 +40,9 @@
         <div id="contenedor_texto_uno">
             <span id="t1">
                 En nuestra profesión muchas veces realizamos trabajos donde necesitamos modelar el cabello para lograr un resultado óptimo del peinado.
-            </span>
-            <span id="t2">
-                La cera modeladora es un producto de fácil manejo y nos permite realizar un trabajo prolijo, por lo tanto consideramos interesante elaborar un producto natural.
-            </span>
-            <span id="t3">
+                <br><br>
+                La cera modeladora es un producto de fácil manejo y nos permite realizar un trabajo prolijo, por lo tanto quisimos elaborar un producto natural.
+                <br><br>
                 Creímos interesante también hacer un bálsamo de labios casero, que evite la deshidratación y pueda ser utilizado por toda la familia y todos los tipos de piel, incursionando en la cosmética ecológica y natural.
             </span>
         </div>
@@ -62,7 +72,18 @@
             <div class="panal clickeable"></div>
             <div class="panal clickeable"></div>
             <div class="panal clickeable"></div>
-            <h2 id="titulo_contenedor_tres">PROPIEDADES DE LA MIEL</h2>
+
+            <div id="contenedorTituloTres">
+                <h2 id="titulo_contenedor_tres">PROPIEDADES DE LA MIEL</h2>
+
+                <div id="formaLimon">
+                <div class="imgLimon clickeable"></div>
+                <div class="imgLimon clickeable"></div>
+                <div class="imgLimon clickeable"></div>
+                <div class="imgLimon clickeable"></div>
+            </div>
+            </div>
+
             <div id="contenedorPropiedades">
 
                 <ul class="listaElementos">
@@ -86,13 +107,6 @@
 
             </div>
 
-            <div id="formaLimon">
-                <div class="imgLimon clickeable"></div>
-                <div class="imgLimon clickeable"></div>
-                <div class="imgLimon clickeable"></div>
-                <div class="imgLimon clickeable"></div>
-            </div>
-
             <ul class="listaElementos infoLimon">
                 <li>Previene la caspa</li>
                 <li>Mejora la textura del cabello</li>
@@ -104,7 +118,9 @@
 
 
     <section id="contenedor_cuatro">
-        <h2>BENEFICIOS DEL ROMERO <br> EN EL CABELLO</h2>
+        <div id="contenedorTituloCuatro">
+            <h2>BENEFICIOS DEL ROMERO <br> EN EL CABELLO</h2>
+        </div>
 
         <ul id="parrafo_romero">
             <li>Tiene un efecto vasodilatador, algo que favorece la circulación sanguínea de los folículos. <br> De esta forma reciben mejor los nutrientes, por lo que evitamos que el cabello se debilite.</li>
@@ -160,7 +176,7 @@
                 <li>Tiene propiedades relajantes.</li>
                 <li>Propiedades antibacterianas y antioxidantes</li>
                 <li>Potencia la correcta producción de colágeno y glucoproteínas.</li>
-                <li>Hidrata la piel en profundidad y actúa creando una película protectora sobre los labios para repararlos.</li>
+                <li>Hidrata la piel en profundidad y actúa creando una película protectora <br> sobre los labios para repararlos.</li>
             </ul>
         </div>
         
@@ -169,9 +185,103 @@
     <section id="contenedor_siete">
         <h2>PROCESO DE UNIFICACIÓN DE INGREDIENTES</h2>
         <video autoplay loop muted src="<?php echo SERVER_URL; ?>assets/img/elaboracion.mp4"></video>
+        <p>Utilizamos productos naturales y específicos para cosmética, <br> 
+        con el fin de obtener óptimos resultados en la elaboración <br> 
+        y conservar las propiedades de los mismos.</p>
     </section>
 
+    <?php
+        echo'<div id="menu_principal_footer">
+                <img class="beeyoutiful_circle" src="'.SERVER_URL.'assets/img/beeyoutiful_circle.svg" width="70px" />
+                <div class="irBalsamo"><img src="'.SERVER_URL.'assets/img/balsamo.png" /> <span>BALSAMO LABIAL</span></div>
+                <div class="irCera"><img src="'.SERVER_URL.'assets/img/cera.png" /> <span>CERA CAPILAR</span></div>
+            </div>';
+    ?>
 
 </main>
 
 <script src="<?php echo SERVER_URL; ?>js/inicio.js"></script>
+
+
+<?php } else if($_GET['pagina'] == 'balsamo'){ ?>
+
+
+    <head>
+        <link rel="stylesheet" href="<?php echo SERVER_URL; ?>assets/css/presentaciones.css">
+        <title>BEEYOUTIFUL | Bálsamo Labial</title>
+    </head>
+
+    <main>
+
+        <?php
+            echo'<div id="menu_principal">
+                    <div id="irInicio"><img src="'.SERVER_URL.'assets/img/home.png" /> <span>IR AL INICIO</span></div>
+                    <div class="irCera"><img src="'.SERVER_URL.'assets/img/cera.png" /> <span>CERA CAPILAR</span></div>
+                </div>';
+        ?>
+
+        <div class="contenidoPresentaciones">
+            <h1 class="titulo">Nuestro bálsamo labial en sus dos presentaciones...</h1>
+
+            <div class="contenedorCards">
+                <div class="card">
+                    <div class="balsamo_vainilla clickeable"></div>
+                    <span class="etiqueta">Bálsamo de Vainilla</span>
+                    <img class="liston" src="<?php echo SERVER_URL; ?>assets/img/liston.svg" alt="">
+                </div>
+                <div class="card">
+                    <div class="balsamo_calendula clickeable"></div>
+                    <span class="etiqueta">Bálsamo de Caléndula</span>
+                    <img class="liston" src="<?php echo SERVER_URL; ?>assets/img/liston.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="<?php echo SERVER_URL; ?>js/presentaciones.js"></script>
+
+
+<?php } else if($_GET['pagina'] == 'cera'){ ?>
+
+    <head>
+        <link rel="stylesheet" href="<?php echo SERVER_URL; ?>assets/css/presentaciones.css">
+        <title>BEEYOUTIFUL | Cera Capilar</title>
+    </head>
+
+    <main>
+
+        <?php
+            echo'<div id="menu_principal">
+                    <div id="irInicio"><img src="'.SERVER_URL.'assets/img/home.png" /> <span>IR AL INICIO</span></div>
+                    <div class="irBalsamo"><img src="'.SERVER_URL.'assets/img/balsamo.png" /> <span>BALSAMO LABIAL</span></div>
+                </div>';
+        ?>
+
+        <div class="contenidoPresentaciones">
+            <h1 class="titulo">Nuestra cera capilar en sus dos presentaciones...</h1>
+
+            <div class="contenedorCards">
+                <div class="card">
+                    <div class="cera_limon clickeable"></div>
+                    <span class="etiqueta">Cera de Limón</span>
+                    <img class="liston" src="<?php echo SERVER_URL; ?>assets/img/liston.svg" alt="">
+                </div>
+                <div class="card">
+                    <div class="cera_romero clickeable"></div>
+                    <span class="etiqueta">Cera de Romero</span>
+                    <img class="liston" src="<?php echo SERVER_URL; ?>assets/img/liston.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="<?php echo SERVER_URL; ?>js/presentaciones.js"></script>
+
+<?php } else { ?>
+
+
+<?php } ?>
+
+
