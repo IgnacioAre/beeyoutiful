@@ -224,6 +224,7 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     height: 100vh;
     min-height: 800px;
     overflow: hidden;
+    z-index: -1;
 }
 
 
@@ -240,7 +241,6 @@ transform: matrix3d(1 /* Rotacion eje Y -> 0.2 *\/, 0 /* Rotación eje Z -> 0.2 
     width: 300px;
     height: 280px;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    z-index: 10;
 }
 
 .panal:nth-child(1){
